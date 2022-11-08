@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class MultilevelSales {
 	
-	// 다단계 칫솔 판매
+	// 다단계 칫솔 판매z
 	// 칫솔의 가격 100원
 	// 10%를 추천인에게 주며, 원 단위에서 절사한다. 그 금액이 1원 미만인 경우 분배하지 않고 갖는다.
 	// <참고>
