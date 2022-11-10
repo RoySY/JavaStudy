@@ -25,21 +25,24 @@ public class ComparableTest {
 		// ------------------------Comparable 인터페이스를 구현한 Node 클래스------------------------
 		ArrayList<Node> list = new ArrayList<>();
 		
-		list.add(new Node(2, 2));
-		list.add(new Node(1, 1));
-		list.add(new Node(3, 3));
+		// index, distance, name
+		list.add(new Node(1, 2, "B"));
+		list.add(new Node(2, 1, "A"));
+		list.add(new Node(2, 2, "C"));
+		list.add(new Node(1, 3, "F"));
+		list.add(new Node(1, 3, "E"));
+		list.add(new Node(1, 3, "D"));
 		
 		for (Node node : list) {
-			System.out.print(node.getDistance() + " "); // 2, 1, 3
+			System.out.print(node.getName() + " "); // "B", "A", "C", "F", "E", "D"
 		}
 		
 		System.out.println();
 		// -----------------------------------Node 클래스 정렬-----------------------------------
-		Collections.sort(list);
+		Collections.sort(list); // Node 클래스의 정렬 기준 : ORDER BY distance, index, name
 		
 		for (Node node : list) {
-			System.out.print(node.getDistance() + " "); // 1, 2, 3
+			System.out.print(node.getName() + " "); // "A", "B", "C", "D", "E", "F"
 		}
 	}
-
 }

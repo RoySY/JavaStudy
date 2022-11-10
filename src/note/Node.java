@@ -4,10 +4,12 @@ public class Node implements Comparable<Node> {
 	
 	private int index = 0; // 노드의 번호
 	private int distance = 0; // 노드의 거리
+	private String name = ""; // 노드의 이름
 	
-	public Node(int index, int distance) {
+	public Node(int index, int distance, String name) {
 		this.index = index;
 		this.distance = distance;
+		this.name = name;
 	}
 	
 	public int getIndex() {
@@ -16,6 +18,10 @@ public class Node implements Comparable<Node> {
 	
 	public int getDistance() {
 		return this.distance;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 
 	@Override
@@ -27,10 +33,16 @@ public class Node implements Comparable<Node> {
 //		return otherNode.distance - this.distance; // distance 기준 내림차순 정렬 // ..., 3, 2, 1
 //		return otherNode.getDistance() - this.getDistance(); // distance 기준 내림차순 정렬 // ..., 3, 2, 1
 		
-		// distance, index 기준 오름차순 정렬(ORDER BY distance, index)
+		// distance, index, name 기준 오름차순 정렬(ORDER BY distance, index, name)
 		if (this.distance == otherNode.distance) { // distance가 같을 경우
-			return this.index - otherNode.index; // index 기준 오름차순 정렬
-//			return otherNode.index - this.index; // index 기준 내림차순 정렬
+			
+			if (this.index == otherNode.index) { // index가 같을 경우
+				return this.name.compareTo(otherNode.name); // name 기준 오름차순 정렬
+//				return otherNode.name.compareTo(this.name); // name 기준 내림차순 정렬
+			} else { // index가 같지 않을 경우
+				return this.index - otherNode.index; // index 기준 오름차순 정렬
+//				return otherNode.index - this.index; // index 기준 내림차순 정렬
+			}
 		} else { // distance가 같지 않을 경우
 			return this.distance - otherNode.distance; // distance 기준 오름차순 정렬
 //			return otherNode.distance - this.distance; // distance 기준 내림차순 정렬
