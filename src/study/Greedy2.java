@@ -1,41 +1,36 @@
 package study;
 
-import java.util.Scanner;
-
 public class Greedy2 {
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int num = 0;
-		int k = 0;
-		int target = 0;
+	// 그리디 : 1이 될 때까지
+	// 어떠한 수 N이 1이 될 때까지 다음 두 과정 중 하나를 반복적으로 선택하여 수행하려고 한다.
+	// N에서 1을 뺀다. N을 K로 나눈다.(N이 K로 나누어질 경우에만)
+	// N과 K가 주어질 때 1이 될 때까지 과정을 수행해야 하는 최소 횟수는?
+	
+	public static void solution(int n, int k) {
 		int cnt = 0;
 		
-		Scanner scan = new Scanner(System.in);
-		
-		num = scan.nextInt(); // 두 수를 입력받고 나누기 또는 빼기 1로 1을 만드는 횟수
-		k = scan.nextInt();
-		
-		while (true) {
-			
-			if (num >= k) {
-				
-				if ((num % k) == 0) {
-					num = (num / k);
-					cnt++;
-				} else {
-					num = num - 1;
-					cnt++;
-				}
+		while (n > 1) {
+			if (n % k == 0 && k != 1) {
+				n = n / k;
+				cnt++;
 			} else {
-				
-				if (num == 1) break;
-				
-				num = num - 1;
+				n = n - 1;
 				cnt++;
 			}
+			
+			if (n == 1) {
+				System.out.println(cnt + "횟수로 1을 만들 수 있다.");
+			}
 		}
-		
-		System.out.println(cnt);
 	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int N = 37;
+		int K = 2; //36, 18, 9, 8, 4, 2, 1
+		
+		solution(N,K);
+	}
+
 }
