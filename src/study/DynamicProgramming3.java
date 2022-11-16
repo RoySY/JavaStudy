@@ -2,7 +2,7 @@ package study;
 
 public class DynamicProgramming3 {
 	
-	// DP : 동빈나 1로 만들기
+	// DP : 1로 만들기
 	// 정수 X가 주어졌을 때 다음 연산을 사용하여 1로 만들 수 있는 최소 횟수
 	// X가 5로 나누어 떨어지면, 5로 나눈다.
 	// X가 3으로 나누어 떨어지면, 3으로 나눈다.
