@@ -31,5 +31,4 @@ public class EtcAlgorithm2 {
 		
 		System.out.println(cnt);
 	}
-
 }
