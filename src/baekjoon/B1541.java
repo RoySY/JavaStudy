@@ -5,7 +5,7 @@ public class B1541 {
 	// 잃어버린 괄호 - Greedy 1541번
 	
 	public static int solution(String str) {
-		String[] strArr1 = str.split("-"); // "-" 문자 기준으로 split
+		String[] strArr1 = str.split("-"); // 문자 "-" 기준으로 split
 		int totalSum = 0;
 		int tempSum = 0;
 		
@@ -15,7 +15,7 @@ public class B1541 {
 			
 			tempSum = 0;
 			
-			String[] strArr2 = strArr1[i].split("\\+"); // "+" 특수문자 기준으로 split (특수문자의 경우 \\특수문자 or [특수문자])
+			String[] strArr2 = strArr1[i].split("\\+"); // 특수문자 "+" 기준으로 split (특수문자의 경우 \\특수문자 or [특수문자])
 			
 			for (int j = 0; j < strArr2.length; j++) {
 				tempSum += Integer.parseInt(strArr2[j]);
