@@ -23,21 +23,21 @@ public class B2178 {
 		
 		visit[n][m] = true;
 		
-		while (!q.isEmpty()) {
+		while(!q.isEmpty()) {
 			
-			int[] a = q.poll();
-			int row = a[0];
-			int col = a[1];
+			int[] tempArr = q.poll();
+			int row = tempArr[0];
+			int col = tempArr[1];
 			
-			for (int i = 0; i < 4; i++) {
+			for(int i = 0; i < 4; i++) {
 				int nextX = col + dx[i];
 				int nextY = row + dy[i];
 				
-				if (nextX < 0 || nextY < 0 || nextX >= c || nextY >= r) {
+				if(nextX < 0 || nextY < 0 || nextX >= c || nextY >= r) {
 					continue;
 				}
 				
-				if (visit[nextY][nextX] || arr[nextY][nextX] == 0) {
+				if(visit[nextY][nextX] || arr[nextY][nextX] == 0) {
 					continue;
 				}
 				
