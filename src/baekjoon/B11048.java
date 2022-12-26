@@ -36,6 +36,7 @@ public class B11048 {
 			for(int j = 0; j < m; j++) {
 				System.out.print(dp[i][j] + " ");
 			}
+			
 			System.out.println();
 		}
 		
