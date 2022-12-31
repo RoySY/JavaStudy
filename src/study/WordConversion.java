@@ -5,7 +5,6 @@ public class WordConversion {
 	// 단어 변환
 	
 	static boolean[] visited = {};
-	static int chageCnt = 0;
 	static int pDepth = 0;
 	
 	public static boolean strCompare(String str1, String str2) { // str1과 str2의 길이가 같다는 조건 하에
@@ -58,14 +57,14 @@ public class WordConversion {
 	}
 	
 	public static int solution(String begin, String target, String[] words) {
-        int answer = 0;
+		int answer = 0;
         
-        visited = new boolean[words.length];
+		visited = new boolean[words.length];
         
-        answer = dfs(begin, target, words, 0);
+		answer = dfs(begin, target, words, 0);
         
-        return answer;
-    }
+		return answer;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
