@@ -5,7 +5,7 @@ public class WordConversion {
 	// 단어 변환
 	
 	static boolean[] visited = {};
-	static int pDepth = 0;
+	static int gDepth = 0;
 	
 	public static boolean strCompare(String str1, String str2) { // str1과 str2의 길이가 같다는 조건 하에
 		int strLength = str1.length();
@@ -27,11 +27,11 @@ public class WordConversion {
 	
 	public static int dfs(String begin, String target, String[] words, int depth) { // hit // cog // {"hot", "dot", "dog", "lot", "log", "cog"}
 		
-		int localDepth = 0;
+		int mDepth = 0;
 		
 		for(int i = 0; i < words.length; i++) {
 			
-			localDepth = depth;
+			mDepth = depth;
 			
 			if(visited[i]) {
 				continue;
@@ -39,21 +39,21 @@ public class WordConversion {
 			
 			if(strCompare(begin, words[i])) { // 1글자만 다른 경우, 즉 변경 가능한 경우
 				begin = words[i]; // 바꿀 단어를 비교 대상으로 변경
-				localDepth++;
+				mDepth++;
 				visited[i] = true; // 사용한 단어 방문 처리
 				
-				dfs(begin, target, words, localDepth);
+				dfs(begin, target, words, mDepth);
 				
 				if(begin.equals(target)) {
-					System.out.println(localDepth + "번 변경으로 가능");
-					pDepth = localDepth;
+					System.out.println(mDepth + "번 변경으로 가능");
+					gDepth = mDepth;
 					break;
 				}
 			} else {
 				continue;
 			}
 		}
-		return pDepth;
+		return gDepth;
 	}
 	
 	public static int solution(String begin, String target, String[] words) {
