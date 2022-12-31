@@ -58,11 +58,11 @@ public class WordConversion {
 	
 	public static int solution(String begin, String target, String[] words) {
 		int answer = 0;
-        
+		
 		visited = new boolean[words.length];
-        
+		
 		answer = dfs(begin, target, words, 0);
-        
+		
 		return answer;
 	}
 
