@@ -38,6 +38,6 @@ public class Network {
 		int n = 3; // 3대의 컴퓨터
 		int[][] computers = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}; // 연결된 네트워크
 		
-		System.out.println(solution(n, computers)); // 2 // 전체 컴퓨터 수에서 간선의 수를 빼면 된다.
+		System.out.println(solution(n, computers)); // 2
 	}
 }
