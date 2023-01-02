@@ -33,8 +33,6 @@ public class WayToSchool {
 				if(j != 0) {
 					dp[i][j] += dp[i][j - 1] % 1000000007;
 				}
-				
-				// dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
 			}
 		}
 		
